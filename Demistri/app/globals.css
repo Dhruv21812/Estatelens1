@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .no-print {
+    @apply print:hidden;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .bg-black, .bg-zinc-900, .bg-zinc-800 {
+    background: transparent !important;
+  }
+
+  .text-white, .text-zinc-400, .text-zinc-300 {
+    color: black !important;
+  }
+
+  .border, .border-zinc-800 {
+    border-color: #eee !important;
+  }
+
+  .shadow-lg, .shadow-xl {
+    box-shadow: none !important;
+  }
+
+  .rounded-3xl, .rounded-2xl {
+    border-radius: 8px !important;
+  }
+}
